@@ -2,9 +2,9 @@ from django.urls import path
 from .views import list_books
 from .views import LibraryDetailView
 from .views import BookListView
+from .views import register
 from .views import user_login
 from .views import user_logout
-from .views import  register
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.views import LogoutView 
 
