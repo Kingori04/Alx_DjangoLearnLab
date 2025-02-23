@@ -1,4 +1,5 @@
-from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import AuthenticationForm
 from django.shortcuts import render
 from django.views.generic.detail import DetailView  # ✅ Missing import added!
 from django.views.generic import ListView
