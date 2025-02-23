@@ -1,9 +1,9 @@
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.shortcuts import render
 from django.views.generic.detail import DetailView  # ✅ Missing import added!
 from django.views.generic import ListView
 from .models import Library, Book  
 from django.contrib.auth import login, logout, authenticate
-from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.shortcuts import redirect
 
 # Function-Based View (FBV) to list all books
