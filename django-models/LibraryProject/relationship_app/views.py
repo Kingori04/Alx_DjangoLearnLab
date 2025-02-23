@@ -39,7 +39,7 @@ def user_login(request):
 
 def user_logout(request):
     logout(request)
-    return render(request, "relationship_app/logout.html")
+    return redirect("login") 
 
 def register(request):
     if request.method == "POST":
