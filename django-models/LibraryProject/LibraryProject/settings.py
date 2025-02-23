@@ -56,7 +56,7 @@ ROOT_URLCONF = 'LibraryProject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / "relationship_app/templates"],
+        'DIRS': [BASE_DIR / "templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -100,6 +100,11 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+# Redirect URLs for Authentication
+LOGIN_REDIRECT_URL = "home"  # Redirect after successful login
+LOGOUT_REDIRECT_URL = "login"  # Redirect to login page after logout
+
 
 
 # Internationalization
