@@ -31,9 +31,27 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'your-secret-key-here'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
+
+# settings.py
+
+# Enforce HTTPS connections  
+SECURE_SSL_REDIRECT = True  # Redirect all HTTP requests to HTTPS  
+SECURE_HSTS_SECONDS = 31536000  # Enable HTTP Strict Transport Security (HSTS) for 1 year  
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True  # Apply HSTS to all subdomains  
+SECURE_HSTS_PRELOAD = True  # Allow preloading of HSTS policy  
+
+# Enforce secure cookies  
+SESSION_COOKIE_SECURE = True  # Ensure session cookies are sent over HTTPS  
+CSRF_COOKIE_SECURE = True  # Ensure CSRF cookies are sent over HTTPS  
+
+# Additional security headers  
+X_FRAME_OPTIONS = "DENY"  # Prevent clickjacking  
+SECURE_CONTENT_TYPE_NOSNIFF = True  # Prevent MIME-type sniffing  
+SECURE_BROWSER_XSS_FILTER = True  # Enable browser XSS protection  
+
 
 
 # Application definition
