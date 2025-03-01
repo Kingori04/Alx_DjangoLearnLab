@@ -1,7 +1,15 @@
+from .forms import ExampleForm
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import permission_required, login_required
 from .models import Article
 from .models import Book
+from .forms import ExampleForm
+
+
+def example_view(request):
+    form = ExampleForm()
+    return render(request, "bookshelf/form_example.html", {"form": form})
+
 
 @login_required
 @permission_required("bookshelf.view_book", raise_exception=True)
