@@ -41,7 +41,8 @@ ALLOWED_HOSTS = []
 SECURE_SSL_REDIRECT = True  # Redirect all HTTP requests to HTTPS  
 SECURE_HSTS_SECONDS = 31536000  # Enable HTTP Strict Transport Security (HSTS) for 1 year  
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True  # Apply HSTS to all subdomains  
-SECURE_HSTS_PRELOAD = True  # Allow preloading of HSTS policy  
+SECURE_HSTS_PRELOAD = True  # Allow preloading of HSTS policy 
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 # Enforce secure cookies  
 SESSION_COOKIE_SECURE = True  # Ensure session cookies are sent over HTTPS  
