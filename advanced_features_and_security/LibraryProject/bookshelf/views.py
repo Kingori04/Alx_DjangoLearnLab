@@ -1,6 +1,14 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import permission_required, login_required
 from .models import Article
+from .models import Book
+
+@login_required
+@permission_required("bookshelf.view_book", raise_exception=True)
+def book_list(request):
+    """Displays a list of all books."""
+    books = Book.objects.all()
+    return render(request, "bookshelf/book_list.html", {"books": books})
 
 @login_required
 @permission_required("bookshelf.can_view", raise_exception=True)
